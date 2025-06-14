@@ -462,6 +462,76 @@ body {
   text-decoration: none;
   transition: background 0.3s ease;
 }
+/* Ajoutez ces styles à votre fichier App.css existant */
+
+.language-switcher {
+  display: flex;
+  gap: 10px;
+}
+
+.language-switcher button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #374151;
+  font-weight: 500;
+}
+
+.legal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.legal-content h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #111827;
+  margin-top: 1rem;
+}
+
+.legal-content p {
+  color: #6b7280;
+  margin-bottom: 1rem;
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: black;
+}
+
 
 .social-link:hover {
   background: #059669;
