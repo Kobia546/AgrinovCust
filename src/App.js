@@ -150,8 +150,8 @@ const App = () => {
               <img src={logo} alt="Logo" />
             </div>
             <div className="logo-text">
-              <h1>AGRO SERRE</h1>
-              <p>INNOVATION</p>
+              <h1>AGRO SERRE INNOVATION</h1>
+              <p>CÔTE D'IVOIRE </p>
             </div>
           </div>
           <div className="language-switcher">
@@ -367,7 +367,7 @@ const App = () => {
                   </div>
                   <textarea className="form-input form-textarea" placeholder={t('Message')} value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})}></textarea>
                   <div className="form-buttons">
-                    <button type="button" className="btn btn-email" onClick={handleSubmit}>{t('download_quote')}</button>
+                    <button type="button" className="btn btn-email" onClick={handleSubmit}>{t('Telecharger Demande ')}</button>
                     <button type="button" className="btn btn-whatsapp" onClick={handleWhatsApp}>WhatsApp</button>
                   </div>
                 </div>
@@ -448,7 +448,7 @@ const App = () => {
                 </div>
                 <div className="logo-text">
                   <h3>AGRO SERRE</h3>
-                  <p>INNOVATION</p>
+                  <p>INNOVATION COTE D'IVOIRE</p>
                 </div>
               </div>
               <p>{language === 'fr' ? 'Votre partenaire pour l\'agriculture moderne en Côte d\'Ivoire.' : 'Your partner for modern agriculture in Côte d\'Ivoire.'}</p>
@@ -468,7 +468,7 @@ const App = () => {
             </div>
           </div>
           <div className="footer-bottom">
-            <p>&copy; 2025 AGRO SERRE INNOVATION. {t('all_rights_reserved')}.</p>
+            <p>&copy; 2025 AGRO SERRE INNOVATION COTE D'IVOIRE. {t('Tous droits reservés')}.</p>
           </div>
         </div>
       </footer>
