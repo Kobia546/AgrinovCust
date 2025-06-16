@@ -13,6 +13,8 @@ const App = () => {
   const [language, setLanguage] = useState('fr');
   const [showLegalModal, setShowLegalModal] = useState(false);
   const [showDevisModal, setShowDevisModal] = useState(false);
+  const [showAllProducts, setShowAllProducts] = useState(false);
+
   const [formData, setFormData] = useState({
     nom: '',
     email: '',
@@ -106,28 +108,63 @@ const App = () => {
     }
   ];
 
-  const products = [
+ const products = [
+  {
+    title: language === 'fr' ? "Filet anti-insectes" : "Anti-insect Net",
+    description: language === 'fr' ? "Maille 40 pour bloquer mouches blanches, thrips, etc." : "40 mesh to block whiteflies, thrips, etc.",
+    image: require('./Images/antiinsecte.jpeg'),
+    price: "1300FCFA/m²"
+  },
+  {
+    title: language === 'fr' ? "Ruban adhesif" : "Horticultural Film",
+    description: language === 'fr' ? "Polyéthylène haute densité, traité anti-UV." : "High density polyethylene, UV treated.",
+    image: require('./Images/horticole.jpeg'),
+    price: "9000 FCFA"
+  },
+  {
+    title: language === 'fr' ? "Filet d'ombrage" : "Shade Net",
+    description: language === 'fr' ? "Oubliez le stress hydrique et les feuilles brûlées." : "Shading rate from 30% to 90%.",
+    image: require('./Images/Ombrage.jpeg'),
+    price: "1000FCFA/m²"
+  },
     {
-      title: language === 'fr' ? "Filet anti-insectes" : "Anti-insect Net",
-      description: language === 'fr' ? "Maille 40 pour bloquer mouches blanches, thrips, etc." : "40 mesh to block whiteflies, thrips, etc.",
-      image: require('./Images/antiinsecte.jpeg')
-    },
+    title: language === 'fr' ? "PH METRE" : "PH METRE",
+    description: language === 'fr' ? "Type mutifonctionnel de stylo d'appareil de contrôle de qualité" : "Multifunctional type of quality control device pen",
+    image: require('./Images/phmetre.jpeg'),
+    price: "13,000 FCFA"
+  },
     {
-      title: language === 'fr' ? "Ruban Film Horticole" : "Horticultural Film",
-      description: language === 'fr' ? "Polyéthylène haute densité, traité anti-UV." : "High density polyethylene, UV treated.",
-      image: require('./Images/horticole.jpeg')
-    },
+    title: language === 'fr' ? "Sachet culture" : "Culture bag",
+    description: language === 'fr' ? "Sachet idéal pour la production qui va permettre de booster vos cultures" : "Ideal production bag to boost your crops",
+    image: require('./Images/sachet.jpeg'),
+    price: "200 FCFA"
+  },
+  {
+    title: language === 'fr' ? "Brumisateur" : "Brumisator",
+    description: language === 'fr' ? "Brumisateur permet de réduire la température sous la serre" : "Brumisator permits to reduce temperature under the greenhouse",
+    image: require('./Images/Brumisateur.jpeg'),
+    price: "25,000 FCFA"
+  },
     {
-      title: language === 'fr' ? "Filet d'ombrage" : "Shade Net",
-      description: language === 'fr' ? "Taux d'ombrage de 30% à 90%." : "Shading rate from 30% to 90%.",
-      image: require('./Images/Ombrage.jpeg')
-    },
-    {
-      title: language === 'fr' ? "Brumisateur" : "Brumisator",
-      description: language === 'fr' ? "Brumisateur permet de reduire la temperature sous la serre" : "Brumisator permit to reduce temperature under the serre",
-      image: require('./Images/Brumisateur.jpeg')
-    }
-  ];
+    title: language === 'fr' ? "Horticole vert" : "horticultural green",
+    description: language === 'fr' ? "Protégez vos cultures des rayons UV nuisibles avec Film horticole(200 micron vert)" : "Protect your crops from harmful UV rays with Horticultural film(200 micron green",
+    image: require('./Images/horticolevert.jpeg'),
+  price: "1400 FCFA/m²"
+  },
+     {
+    title: language === 'fr' ? "Serre Tunnel(250m²)" : "horticultural green",
+    description: language === 'fr' ? "Longeur 25 m Largeur 10m Total 250m²" : "Protect your crops from harmful UV rays with Horticultural film(200 micron green",
+    image: require('./Images/tunnel.jpeg'),
+  price: "A partir de 4.000.000"
+  },
+       {
+    title: language === 'fr' ? "Serre en bois" : "horticultural green",
+    description: language === 'fr' ? "Serre en bois à bon prix" : "Protect your crops from harmful UV rays with Horticultural film(200 micron green",
+    image: require('./Images/serre.jpeg'),
+  price: "A partir de 2.800.000"
+  }
+];
+
 
   const services = [
     { icon: <Leaf size={32} />, title: language === 'fr' ? "Fabrication de Serres" : "Greenhouse Manufacturing", description: language === 'fr' ? "Conception et fabrication de serres sur mesure adaptées à vos besoins agricoles spécifiques." : "Design and manufacturing of custom greenhouses adapted to your specific agricultural needs." },
@@ -173,19 +210,19 @@ const App = () => {
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
-        {isMenuOpen && (
-          <div className="mobile-menu">
-            <ul>
-              {['accueil', 'presentation', 'modeles', 'fiches-techniques', 'accessoires', 'services', 'produits', 'contact', 'devis', 'mentions-legales'].map((item) => (
-                <li key={item}>
-                  <button onClick={() => {
-                    scrollToSection(item);
-                    setIsMenuOpen(false);
-                  }}>
-                    {item === 'accueil' ? t('home') : item === 'presentation' ? t('about') : item === 'fiches-techniques' ? t('services') : item === 'accessoires' ? t('products') : item === 'devis' ? t('request_quote') : item === 'mentions-legales' ? t('legal_notice') : item}
-                  </button>
-                </li>
-              ))}
+       {isMenuOpen && (
+  <div className="mobile-menu">
+    <ul>
+      {['accueil', 'presentation', 'modeles', 'fiches-techniques', 'accessoires', 'services', 'produits', 'contact', 'devis', 'mentions-legales'].map((item) => (
+        <li key={item}>
+          <button onClick={() => {
+            scrollToSection(item);
+            setIsMenuOpen(false);
+          }}>
+            {item === 'accueil' ? t('home') : item === 'presentation' ? t('about') : item === 'fiches-techniques' ? t('services') : item === 'accessoires' ? t('products') : item === 'devis' ? t('request_quote') : item === 'mentions-legales' ? t('legal_notice') : item}
+          </button>
+        </li>
+      ))}
             </ul>
           </div>
         )}
@@ -195,8 +232,8 @@ const App = () => {
         <div className="floating-element floating-1"></div>
         <div className="floating-element floating-2"></div>
         <div className="hero-content">
-          <h1>{t('welcome')} <span className="gradient-text">{t('welcome')}</span></h1>
-          <p>{language === 'fr' ? 'Fabrication, installation et vente de matériel de serre en Côte d\'Ivoire. Révolutionnez votre agriculture avec nos solutions innovantes.' : 'Manufacturing, installation and sale of greenhouse equipment in Côte d\'Ivoire. Revolutionize your agriculture with our innovative solutions.'}</p>
+          <h1>{t('welcome')} <span className="gradient-text">{t('chez nous')}</span></h1>
+          <p>{language === 'fr' ? 'Agro Serre Innovation Côte  D\'ivoire; est une entreprise de construction de serre local, de vente d\'accessoires et de materiel agricole ' : 'Agro Serre Innovation Côte D\'ivoire; is a company that builds local greenhouses and sells accessories and agricultural equipment.'}</p>
           <div className="hero-buttons">
             <button onClick={() => scrollToSection('services')} className="btn btn-primary">
               {t('services')} <ChevronRight size={20} />
@@ -298,25 +335,46 @@ const App = () => {
         </div>
       </section>
 
-      <section id="produits" className="section">
-        <div className="container">
-          <div className="section-title">
-            <h2>{t('products')}</h2>
-            <p>{language === 'fr' ? 'Découvrez nos produits pour l\'agriculture sous serre.' : 'Discover our products for greenhouse farming.'}</p>
+  <section id="produits" className="section">
+  <div className="container">
+    <div className="section-title">
+      <h2>{t('products')}</h2>
+      <p>{language === 'fr' ? 'Découvrez nos produits pour l\'agriculture sous serre.' : 'Discover our products for greenhouse farming.'}</p>
+    </div>
+    <div className="grid grid-4">
+      {products.slice(0, 4).map((product, index) => (
+        <div key={index} className="card">
+          <div className="card-image">
+            <img src={product.image} alt={product.title} />
           </div>
-          <div className="grid grid-4">
-            {products.map((product, index) => (
-              <div key={index} className="card">
-                <div className="card-image">
-                  <img src={product.image} alt={product.title} />
-                </div>
-                <h3>{product.title}</h3>
-                <p>{product.description}</p>
-              </div>
-            ))}
-          </div>
+          <h3>{product.title}</h3>
+          <p>{product.description}</p>
+          <p className="product-price">{product.price}</p>
         </div>
-      </section>
+      ))}
+    </div>
+    <div className="see-more-container">
+      <button className="btn see-more-btn" onClick={() => setShowAllProducts(true)}>
+        {t('Voir plus de Produits')}
+      </button>
+    </div>
+    {showAllProducts && (
+      <div className="grid grid-4">
+        {products.slice(4).map((product, index) => (
+          <div key={index + 4} className="card">
+            <div className="card-image">
+              <img src={product.image} alt={product.title} />
+            </div>
+            <h3>{product.title}</h3>
+            <p>{product.description}</p>
+            <p className="product-price">{product.price}</p>
+          </div>
+        ))}
+      </div>
+    )}
+  </div>
+</section>
+
 
       <section id="contact" className="section section-green">
         <div className="container">
@@ -419,7 +477,7 @@ const App = () => {
               </select>
               <textarea name="description" className="form-input form-textarea" placeholder={language === 'fr' ? 'Description détaillée du projet' : 'Detailed project description'} value={devisData.description} onChange={(e) => setDevisData({...devisData, description: e.target.value})} required></textarea>
               <div className="form-buttons">
-                <button type="button" className="btn btn-primary" onClick={generateDevisPDF}>{t('download_quote')}</button>
+                <button type="button" className="btn btn-primary" onClick={generateDevisPDF}>{t('Telecharger le devis')}</button>
                 <button type="button" className="btn btn-outline" onClick={sendDevisRequest}>{language === 'fr' ? 'Envoyer la demande' : 'Send request'}</button>
               </div>
             </div>
