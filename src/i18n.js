@@ -8,7 +8,7 @@ i18n
       en: {
         translation: {
           "welcome": "Welcome",
-          "with_us":"With us",
+          "with_us":"At home",
           "about": "About Us",
           "phone":"phone",
           "name":"Full name",
@@ -31,7 +31,7 @@ i18n
       fr: {
         translation: {
           "welcome": "Bienvenue",
-          "with_us":"Chez nous",
+          "with_us":"Chez vous",
           "about": "À Propos",
           "production":"Fabrication de serre",
           "name":"Nom complet",
