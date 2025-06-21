@@ -601,21 +601,22 @@ const App = () => {
           
           <div className="nav-center">
             <ul className="nav-menu">
-              {['accueil', 'presentation', 'fiches-techniques', 'produits', 'contact', 'devis', 'mentions-legales'].map((item) => (
-                <li key={item}>
-                  <button 
-                    onClick={() => scrollToSection(item)} 
-                    className={`nav-link ${activeSection === item ? 'active' : ''}`}
-                  >
-                    {item === 'accueil' ? t('home') : 
-                     item === 'presentation' ? t('about') : 
-                     item === 'fiches-techniques' ? t('services') : 
-                     item === 'produits' ? t('products') : 
-                     item === 'devis' ? t('request_quote') : 
-                     item === 'mentions-legales' ? t('legal_notice') : item}
-                  </button>
-                </li>
-              ))}
+            {['accueil', 'presentation', 'fondatrices', 'fiches-techniques', 'produits', 'contact', 'devis', 'mentions-legales'].map((item) => (
+  <li key={item}>
+    <button 
+      onClick={() => scrollToSection(item)} 
+      className={`nav-link ${activeSection === item ? 'active' : ''}`}
+    >
+      {item === 'accueil' ? t('home') : 
+       item === 'presentation' ? t('about') : 
+       item === 'fondatrices' ? (language === 'fr' ? 'Fondatrices' : 'Founders') :
+       item === 'fiches-techniques' ? t('services') : 
+       item === 'produits' ? t('products') : 
+       item === 'devis' ? t('request_quote') : 
+       item === 'mentions-legales' ? t('legal_notice') : item}
+    </button>
+  </li>
+))}
             </ul>
           </div>
 
@@ -638,20 +639,21 @@ const App = () => {
         <div className={`mobile-menu ${isMenuOpen ? 'active' : ''}`}>
           <div className="mobile-menu-content">
             <ul>
-              {['accueil', 'presentation', 'fiches-techniques', 'produits', 'contact', 'devis', 'mentions-legales'].map((item) => (
-                <li key={item}>
-                  <button onClick={() => {
-                    scrollToSection(item);
-                    setIsMenuOpen(false);
-                  }}>
-                    {item === 'accueil' ? t('home') : 
-                     item === 'presentation' ? t('about') : 
-                     item === 'fiches-techniques' ? t('services') : 
-                     item === 'produits' ? t('products') : 
-                     item === 'devis' ? t('request_quote') : 
-                     item === 'mentions-legales' ? t('legal_notice') : item}
-                  </button>
-                </li>
+           {['accueil', 'presentation', 'fondatrices', 'fiches-techniques', 'produits', 'contact', 'devis', 'mentions-legales'].map((item) => (
+  <li key={item}>
+    <button onClick={() => {
+      scrollToSection(item);
+      setIsMenuOpen(false);
+    }}>
+      {item === 'accueil' ? t('home') : 
+       item === 'presentation' ? t('about') : 
+       item === 'fondatrices' ? (language === 'fr' ? 'Fondatrices' : 'Founders') :
+       item === 'fiches-techniques' ? t('services') : 
+       item === 'produits' ? t('products') : 
+       item === 'devis' ? t('request_quote') : 
+       item === 'mentions-legales' ? t('legal_notice') : item}
+    </button>
+  </li>
               ))}
             </ul>
           </div>
@@ -753,6 +755,7 @@ const App = () => {
           </div>
         </div>
       </section>
+     
 
       <section id="fiches-techniques" className="section">
         <div className="container">
@@ -1329,6 +1332,127 @@ const App = () => {
           </div>
         </div>
       </section>
+       <section id="fondatrices" className="section section-empowerment">
+  <div className="container">
+    <div className="section-header">
+      <div className="empowerment-badge">
+        <span className="badge-text">👩‍💼 Women Empowerment</span>
+      </div>
+      <div className="section-title">
+        <h2>{language === 'fr' ? 'Nos Fondatrices Visionnaires' : 'Our Visionary Founders'}</h2>
+        <p>{language === 'fr' 
+          ? 'Agro Serre Innovation CI est une entreprise ivoirienne fondée par deux dynamiques femmes visionnaires, animées par une passion commune pour l\'agriculture durable et l\'innovation technologique au service de la terre.' 
+          : 'Agro Serre Innovation CI is an Ivorian company founded by two dynamic visionary women, driven by a common passion for sustainable agriculture and technological innovation serving the land.'
+        }</p>
+      </div>
+    </div>
+    
+    <div className="founders-content">
+      <div className="empowerment-message">
+        <div className="message-card">
+          <div className="message-icon">
+            <Leaf size={32} />
+          </div>
+          <h3>{language === 'fr' ? 'Notre Vision' : 'Our Vision'}</h3>
+          <p>{language === 'fr' 
+            ? 'Convaincues que l\'avenir de l\'agriculture passe par des méthodes respectueuses de l\'environnement et accessibles à tous, elles ont uni leurs forces pour créer une structure moderne, inclusive et tournée vers l\'avenir.'
+            : 'Convinced that the future of agriculture lies in environmentally friendly and accessible methods, they have joined forces to create a modern, inclusive and forward-looking structure.'
+          }</p>
+        </div>
+      </div>
+      
+      <div className="founders-grid">
+        <div className="founder-card">
+          <div className="founder-image">
+            {/* Remplacez par vos images */}
+            <img src={require('./Images/image11.jpeg')} alt="Fondatrice 1" />
+            <div className="founder-overlay">
+              <div className="founder-social">
+                <button className="social-btn">
+                  <Mail size={18} />
+                </button>
+              </div>
+            </div>
+          </div>
+          <div className="founder-info">
+            <h3>N'guessan Amoin Séraphine</h3>
+            <p className="founder-title">Co-Gérante & Responsable Commercial</p>
+            <p className="founder-description">
+              {language === 'fr' 
+                ? 'Experte en agriculture durable avec plus de 10 ans d\'expérience dans l\'innovation agricole.'
+                : 'Expert in sustainable agriculture with over 10 years of experience in agricultural innovation.'
+              }
+            </p>
+            <div className="founder-achievements">
+              <span className="achievement-tag">Agriculture Durable</span>
+              <span className="achievement-tag">Innovation</span>
+              <span className="achievement-tag">Leadership</span>
+            </div>
+          </div>
+        </div>
+        
+        <div className="founder-card">
+          <div className="founder-image">
+            {/* Remplacez par vos images */}
+            <img src={require('./Images/images10.jpeg')} alt="Fondatrice 2" />
+            <div className="founder-overlay">
+              <div className="founder-social">
+                <button className="social-btn">
+                  <Mail size={18} />
+                </button>
+              </div>
+            </div>
+          </div>
+          <div className="founder-info">
+            <h3>Awa Ouedreaogo</h3>
+            <p className="founder-title">Co-Gérante & Responsable Administratif</p>
+            <p className="founder-description">
+              {language === 'fr' 
+                ? 'Ingénieure passionnée par les technologies vertes et l\'autonomisation des communautés rurales.'
+                : 'Engineer passionate about green technologies and empowering rural communities.'
+              }
+            </p>
+            <div className="founder-achievements">
+              <span className="achievement-tag">Technologies Vertes</span>
+              <span className="achievement-tag">Ingénierie</span>
+              <span className="achievement-tag">Impact Social</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div className="empowerment-stats">
+        <div className="empowerment-stat">
+          <div className="stat-icon">
+            <Users size={24} />
+          </div>
+          <div className="stat-content">
+            <div className="stat-number">60%</div>
+            <div className="stat-label">Équipe Féminine</div>
+          </div>
+        </div>
+        <div className="empowerment-stat">
+          <div className="stat-icon">
+            <Award size={24} />
+          </div>
+          <div className="stat-content">
+            <div className="stat-number">2+</div>
+            <div className="stat-label">Prix Reçus</div>
+          </div>
+        </div>
+        <div className="empowerment-stat">
+          <div className="stat-icon">
+            <Shield size={24} />
+          </div>
+          <div className="stat-content">
+            <div className="stat-number">30+</div>
+            <div className="stat-label">Femmes Formées</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       <section id="mentions-legales" className="section section-gray">
         <div className="container">
