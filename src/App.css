@@ -6,15 +6,15 @@
 }
 
 :root {
-  --primary-color: #10b981;
-  --primary-dark: #059669;
-  --primary-light: #34d399;
+  --primary-color: #2d5f3f;        /* Vert agricole plus professionnel */
+  --primary-dark: #1a3d2e;         /* Vert foncé terre */
+  --primary-light: #4a7c59;   
   --secondary-color: #f3f4f6;
   --accent-color: #fbbf24;
   --text-primary: #111827;
   --text-secondary: #6b7280;
   --white: #ffffff;
-  --gradient-primary: linear-gradient(135deg, #10b981, #059669);
+  --gradient-primary: linear-gradient(135deg, #2d5f3f, #1a3d2e);
   --gradient-secondary: linear-gradient(135deg, #f0fdf4, #dcfce7);
   --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -320,7 +320,7 @@ body {
 .shape {
   position: absolute;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(5, 150, 105, 0.2));
+  background: linear-gradient(135deg, rgba(45, 95, 63, 0.1), rgba(5, 150, 105, 0.2));
   animation: float 6s ease-in-out infinite;
 }
 
@@ -787,7 +787,7 @@ body {
   border-radius: 12px;
   font-size: 0.75rem;
   font-weight: 500;
-  border: 1px solid rgba(16, 185, 129, 0.2);
+  border: 1px solid rgba(45, 95, 63, 0.3);
 }
 
 /* Product Actions */

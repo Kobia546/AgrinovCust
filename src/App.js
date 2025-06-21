@@ -78,7 +78,7 @@ const App = () => {
     const message = encodeURIComponent(
       `Bonjour AGRO SERRE INNOVATION,\n\nNom: ${formData.nom}\nEmail: ${formData.email}\nTéléphone: ${formData.telephone}\n\nSujet: ${formData.sujet}\n\nMessage: ${formData.message}`
     );
-    window.open(`https://wa.me/2250100522592?text=${message}`, '_blank');
+    window.open(`https://wa.me/message/JFT6R63RXP2AK1?text=${message}`, '_blank');
   };
 
   const sendEmailNotification = (devisData) => {
@@ -568,7 +568,7 @@ const App = () => {
               
               <div className="product-modal-actions">
                 <button className="btn btn-primary" onClick={() => {
-                  window.open(`https://wa.me/2250100522592?text=${encodeURIComponent(`Bonjour, je suis intéressé par ${product.title} au prix de ${product.price}. Pouvez-vous me donner plus d'informations?`)}`, '_blank');
+                  window.open(`https://wa.me/message/JFT6R63RXP2AK1?text=${encodeURIComponent(`Bonjour, je suis intéressé par ${product.title} au prix de ${product.price}. Pouvez-vous me donner plus d'informations?`)}`, '_blank');
                 }}>
                   <MessageCircle size={18} />
                   Commander via WhatsApp
@@ -685,11 +685,11 @@ const App = () => {
           
           <div className="hero-stats">
             <div className="stat">
-              <div className="stat-number">500+</div>
+              <div className="stat-number">10+</div>
               <div className="stat-label">Serres Installées</div>
             </div>
             <div className="stat">
-              <div className="stat-number">10+</div>
+              <div className="stat-number">2+</div>
               <div className="stat-label">Années d'Expérience</div>
             </div>
             <div className="stat">
@@ -977,7 +977,7 @@ const App = () => {
                     <button 
                       className="btn-small btn-whatsapp"
                       onClick={() => {
-                        window.open(`https://wa.me/2250100522592?text=${encodeURIComponent(`Bonjour, je suis intéressé par ${product.title} au prix de ${product.price}`)}`, '_blank');
+                        window.open(`https://wa.me/message/JFT6R63RXP2AK1?text=${encodeURIComponent(`Bonjour, je suis intéressé par ${product.title} au prix de ${product.price}`)}`, '_blank');
                       }}
                     >
                       <MessageCircle size={14} />
