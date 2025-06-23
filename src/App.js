@@ -980,7 +980,7 @@ const App = () => {
                     <button 
                       className="btn-small btn-whatsapp"
                       onClick={() => {
-                        window.open(`https://wa.me/2250100522592?text=${encodeURIComponent(`Bonjour, je suis intéressé par ${product.title} au prix de ${product.price}`)}`, '_blank');
+                        window.open(`https://wa.me/2250101619919?text=${encodeURIComponent(`Bonjour, je suis intéressé par ${product.title} au prix de ${product.price}`)}`, '_blank');
                       }}
                     >
                       <MessageCircle size={14} />
